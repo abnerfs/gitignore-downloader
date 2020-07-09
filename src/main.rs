@@ -104,9 +104,9 @@ async fn main() {
                 name.to_uppercase() == gitignore_replaced.to_uppercase()
             });
             match find_file {
-                Some((name, download_url)) => {
+                Some((_, download_url)) => {
                     let download_path = "./";
-                    println!("Downloading file {}", name);
+                    println!("Downloading file {}", download_url);
                     download_file(&download_url, download_path, ".gitignore").await;
                     println!("File downloaded!");
                 }
